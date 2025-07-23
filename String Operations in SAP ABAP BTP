@@ -1,1 +1,36 @@
+Open Eclipse -> select the project name -> right click and select new -> ABAP CLASS
+Click Enter and give package name and class name (start with Z or Y ), and short description.
+Provide interface name ( IF_OO_ADT_CLASSRUN ) and click on Next. Select transport request or create new and finish.
+Go to Favorite packages -> Our Package -> Source Code Library -> Select our class name and start coding.
+
+CLASS zcl_string_operations DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+
+    INTERFACES if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+CLASS zcl_string_operations IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+  data: lc_msg type String VALUE 'First',
+        lc_msg2 TYPE String VALUE 'Program1',
+        lv_out TYPE string.
+
+*Old syntax to concatenate
+CONCATENATE lc_msg lc_msg2 INTO lv_out SEPARATED BY SPACE.
+
+* New Syntax for concatenate
+data(lv_text) = |{ lc_msg }| && || && |{ lc_msg2 }| .
+
+out->write( lv_text ).
+
+ Out->write( lv_out ).
+  ENDMETHOD.
+ENDCLASS.
 
