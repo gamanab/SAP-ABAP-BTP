@@ -1,6 +1,6 @@
 REPORT ZRS_REPORT_01.
 
-Parameters lv_num1 type I.    " we can change lv_num1 value in executable screen goto -> text elements (F5) -> selection texts
+Parameters lv_num1 type I DEFAULT 10.    " we can change lv_num1 value in executable screen goto -> text elements (F5) -> selection texts
 Parameters lv_num2 type I.    " we can change lv_num2 value in executable screen goto -> text elements (F5) -> selection texts
 *Data lv_result type i.    " normal declaration
 
